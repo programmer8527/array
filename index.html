@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATA FEEDING</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="name">
+        <input type="number" name="number" id="number">
+        <input type="submit" value="submit">
+    </form>
+</body>
+<script>
+    const form = document.querySelector("form");
+    let arrData = [];
+    // add data to array when user submit the form
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const number = document.getElementById('number').value;
+        if (name == "" || number == "") {
+            alert("Please fill all fields!");
+        } else {
+            const obj = {
+                name: name,
+                phoneNumber: number
+            };
+            arrData.push(obj);
+            console.log(arrData);
+            document.getElementById('name').value = "";
+            document.getElementById('number').value = "";
+        }
+    });
+
+</script>
+
+</html>
